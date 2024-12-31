@@ -68,7 +68,7 @@
       }).mount('#app');
 
       var pusher = new Pusher('{{ pusher_key }}', {cluster: '{{ pusher_cluster }}'});
-      var channel = pusher.subscribe('{{ channel }}');
+      var channel = pusher.subscribe('cache-{{ channel }}');
       channel.bind("current-weather", function(data) {
         console.log(data);
         weather.value = data;
